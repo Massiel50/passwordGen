@@ -16,10 +16,12 @@ function generatePassword()
   var passwordLength = prompt(userName + " your password can be between 8 and 128 characters. How long would you like your password to be?");
   var passwordLengthInt = parseInt(passwordLength);
 
-
-  do
+// attempt at making loop for incorrect user input
+  for (var i = 0; i > exitLoop; i++)
   {
-    if (passwordLength === "")
+    // if( (passwordLength === "") || (passwordLengthInt < 8) || (passwordLengthInt > 128) || (isNaN(passwordLengthInt) === true) )
+    
+      if (passwordLength === "")
     {
       alert("Please enter something, like a number");
       var passwordLength = prompt(userName + " How long would you like your password to be?");
@@ -39,56 +41,69 @@ function generatePassword()
       alert("Please choose a number")
       var passwordLength = prompt(userName + " How long would you like your password to be?");
     }
-  
+    else{
+      exitLoop++;
+    }
+
   }
-  while ( (passwordLength === "") || (passwordLengthInt < 8) || (passwordLengthInt > 128) || (isNaN(passwordLengthInt) === true) )
- 
- 
-  
-  // ask user if want to use numbers and concat into mysteryMeat
-  var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
-  if(wantNum == true)
-  {
-    mysteryMeat.concat(numPass);
-    alert("Ok " + userName + ", we'll add numbers");
-  }
-  else{
-    alert("Ok " + userName + ", no numbers");
-  }
+
+    
+
+      // ask user if want to use numbers and concat into mysteryMeat
+    var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
+    if(wantNum == true)
+    {
+      mysteryMeat.concat(numPass);
+      alert("Ok " + userName + ", we'll add numbers");
+    }
+    else{
+    // alert("Ok " + userName + ", no numbers");
+    }
  
   // ask user if want to use special characters and concat into mysteryMeat
-var wantSpecChar = confirm("Would " + userName + " like to use special characters in the password?")
-if(wantSpecChar == true)
-{
-  mysteryMeat.concat(specialPas);
-  console.log(mysteryMeat);
-  alert("Ok " + userName + ", we'll add special characters")
-}
-else{
-  alert("Ok " + userName + ", no special characters")
-}
+    var wantSpecChar = confirm("Would " + userName + " like to use special characters in the password?");
+    if(wantSpecChar == true)
+    {
+      mysteryMeat.concat(specialPas);
+      console.log(mysteryMeat);
+      alert("Ok " + userName + ", we'll add special characters");
+    }
+    else{
+  // alert("Ok " + userName + ", no special characters")
+    }
   // ask user if want to use lower case letters and concat into mysteryMeat
-  var wantLowCase = confirm("Would " + userName + " like to use lower case characters in the password?")
-  if(wantLowCase == true)
-  {
-    mysteryMeat.concat(lowerCharPas);
-    console.log(mysteryMeat);
-    alert("Ok " + userName + ", we'll add lower case characters")
-  }
-  else{
-    alert("Ok " + userName + ", no lower case characters")
-  }
+    var wantLowCase = confirm("Would " + userName + " like to use lower case characters in the password?");
+    if(wantLowCase == true)
+    {
+      mysteryMeat.concat(lowerCharPas);
+      console.log(mysteryMeat);
+      alert("Ok " + userName + ", we'll add lower case characters");
+    }
+    else{
+    // alert("Ok " + userName + ", no lower case characters")
+    }
   // ask user if want to use upper case letters and concat into mysteryMeat
-  var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?")
-  if(wantUpCase == true)
-  {
+    var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?");
+    if(wantUpCase == true)
+   {
     mysteryMeat.concat(upperCharPas);
     console.log(mysteryMeat);
     alert("Ok " + userName + ", we'll add upper case characters")
-  }
+   }
   else{
-    alert("Ok " + userName + ", no upper case characters")
+    // alert("Ok " + userName + ", no upper case characters")
   }
+
+  // randomly select index's in mysteryMeat array for password
+  var mysteryMeat = mysteryMeat[Math.floor(Math.random()*mysteryMeat.length)];
+  console.log(mysteryMeat);
+  return mysteryMeat;
+
+
+    
+  }
+  
+  
 
 }
 
