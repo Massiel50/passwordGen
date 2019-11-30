@@ -39,13 +39,9 @@ function generatePassword()
       alert("Please choose a number")
       var passwordLength = prompt(userName + " How long would you like your password to be?");
     }
-    else{
-      var passwordLength = prompt(userName + " How long would you like your password to be?");
-      i++;
+    else{}
     }
-  }
-  else
-  {
+ 
      // ask user if want to use numbers and concat into mysteryMeat
      var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
      if(wantNum == true)
@@ -54,7 +50,7 @@ function generatePassword()
        alert("Ok " + userName + ", we'll add numbers");
      }
      else{
-     // alert("Ok " + userName + ", no numbers");
+     alert("Ok " + userName + ", no numbers");
      }
   
    // ask user if want to use special characters and concat into mysteryMeat
@@ -66,7 +62,7 @@ function generatePassword()
        alert("Ok " + userName + ", we'll add special characters");
      }
      else{
-   // alert("Ok " + userName + ", no special characters")
+   alert("Ok " + userName + ", no special characters")
      }
    // ask user if want to use lower case letters and concat into mysteryMeat
      var wantLowCase = confirm("Would " + userName + " like to use lower case characters in the password?");
@@ -77,7 +73,7 @@ function generatePassword()
        alert("Ok " + userName + ", we'll add lower case characters");
      }
      else{
-     // alert("Ok " + userName + ", no lower case characters")
+     alert("Ok " + userName + ", no lower case characters")
      }
    // ask user if want to use upper case letters and concat into mysteryMeat
      var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?");
@@ -88,14 +84,13 @@ function generatePassword()
      alert("Ok " + userName + ", we'll add upper case characters")
     }
    else{
-     // alert("Ok " + userName + ", no upper case characters")
+     alert("Ok " + userName + ", no upper case characters")
    }
  
    // randomly select index's in mysteryMeat array for password
-   var mysteryMeat = mysteryMeat[Math.floor(Math.random()*mysteryMeat.length)];
+   return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
    console.log(mysteryMeat);
-   return mysteryMeat;
-  }
+   alert(mysteryMeat);
      
     
   }
@@ -117,11 +112,11 @@ function writePassword() {
 
   passwordText.value = password;
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
+  // copyBtn.removeAttribute("disabled");
+  // copyBtn.focus();
 }
 
-function copyToClipboard() {
+function copyToClipboard(password) {
   // BONUS 
 }
 
