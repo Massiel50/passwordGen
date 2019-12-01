@@ -46,7 +46,7 @@ function generatePassword()
      var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
      if(wantNum == true)
      {
-       mysteryMeat.concat(numPass);
+       mysteryMeat.push(numPass);
        alert("Ok " + userName + ", we'll add numbers");
      }
      else{
@@ -57,8 +57,7 @@ function generatePassword()
      var wantSpecChar = confirm("Would " + userName + " like to use special characters in the password?");
      if(wantSpecChar == true)
      {
-       mysteryMeat.concat(specialPas);
-       console.log(mysteryMeat);
+       mysteryMeat.push(specialPas);
        alert("Ok " + userName + ", we'll add special characters");
      }
      else{
@@ -68,8 +67,7 @@ function generatePassword()
      var wantLowCase = confirm("Would " + userName + " like to use lower case characters in the password?");
      if(wantLowCase == true)
      {
-       mysteryMeat.concat(lowerCharPas);
-       console.log(mysteryMeat);
+       mysteryMeat.push(lowerCharPas);
        alert("Ok " + userName + ", we'll add lower case characters");
      }
      else{
@@ -79,20 +77,26 @@ function generatePassword()
      var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?");
      if(wantUpCase == true)
     {
-     mysteryMeat.concat(upperCharPas);
-     console.log(mysteryMeat);
+     mysteryMeat.push(upperCharPas);
      alert("Ok " + userName + ", we'll add upper case characters")
     }
    else{
      alert("Ok " + userName + ", no upper case characters")
    }
  
+   for (var i=0; i<mysteryMeat.length; i++){
+    console.log(mysteryMeat[i]);
+   }
+   
    // randomly select index's in mysteryMeat array for password
-   return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
-   console.log(mysteryMeat);
-   alert(mysteryMeat);
+
+  //  return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
+  //  console.log(mysteryMeat);
+  //  alert(mysteryMeat);
      
-    
+  //  randomize mysteryMeat
+  mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
+  console.log(mysteryMeat);
   }
   
   
