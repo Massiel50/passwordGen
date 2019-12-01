@@ -94,13 +94,14 @@ mysteryMeat = mysteryMeat.flat(1);
 console.log(mysteryMeat);
 
    // randomly select index's in mysteryMeat array for password
-   return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
-   console.log(mysteryMeat);
-   alert(mysteryMeat);
-     
+  //  mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
+  //  console.log(mysteryMeat);
+  //  alert("Your password is " + mysteryMeat);
+  //    return mysteryMeat;
+
   //  randomize mysteryMeat
-  // mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
-  // console.log(mysteryMeat);
+  mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
+  console.log(mysteryMeat);
   }
   
   
