@@ -6,6 +6,8 @@ var upperCharPas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 
 // array composed of what char user wants in password... AKA mysteryMeat
 var mysteryMeat = [];
+// array of randomized characters consisting of only length of password
+var mysteryMeatFinal = [];
 
 function generatePassword()
 {
@@ -102,6 +104,17 @@ console.log(mysteryMeat);
   //  randomize mysteryMeat
   mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
   console.log(mysteryMeat);
+  // select length of password to return
+
+  for (var i = 0; i < passwordLength; i++)
+  {
+    console.log(mysteryMeat[i]);
+    mysteryMeatFinal.push(mysteryMeat[i]);
+    
+  }
+  return mysteryMeatFinal;
+
+
   }
   
   
