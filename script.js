@@ -19,7 +19,7 @@ function generatePassword()
   var passwordLengthInt = parseInt(passwordLength);
 
 
-    if( (passwordLength === "") || (passwordLengthInt < 8) || (passwordLengthInt > 128) || (isNaN(passwordLengthInt) === true) )
+    if( (passwordLength === "") || (passwordLength < 8) || (passwordLength > 128) || (isNaN(passwordLengthInt) === true) )
     {
       if (passwordLength === "")
     {
@@ -112,8 +112,7 @@ console.log(mysteryMeat);
     mysteryMeatFinal.push(mysteryMeat[i]);
     
   }
-  return mysteryMeatFinal;
-
+  return mysteryMeatFinal.join("");
 
   }
   
