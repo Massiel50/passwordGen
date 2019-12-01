@@ -84,19 +84,23 @@ function generatePassword()
      alert("Ok " + userName + ", no upper case characters")
    }
  
+  //  checks to see what arrays have been added
    for (var i=0; i<mysteryMeat.length; i++){
     console.log(mysteryMeat[i]);
    }
    
-   // randomly select index's in mysteryMeat array for password
+// uses flat method to seperate arrays into one big sole array
+mysteryMeat = mysteryMeat.flat(1);
+console.log(mysteryMeat);
 
-  //  return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
-  //  console.log(mysteryMeat);
-  //  alert(mysteryMeat);
+   // randomly select index's in mysteryMeat array for password
+   return mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
+   console.log(mysteryMeat);
+   alert(mysteryMeat);
      
   //  randomize mysteryMeat
-  mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
-  console.log(mysteryMeat);
+  // mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
+  // console.log(mysteryMeat);
   }
   
   
