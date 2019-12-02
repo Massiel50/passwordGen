@@ -14,39 +14,49 @@ function generatePassword()
   // Welcome user and ask for name
   alert("Hi there! Let's make a nifty and secure password for you");
   var userName = prompt("To get started, what is your name?");
-  passwordLengthInput();
 
-  function passwordLengthInput()
-  {
-    // inform user password must be 8 char or more, prompt for number
+  // inform user password must be 8 char or more, prompt for number
   var passwordLength = prompt(userName + " your password can be between 8 and 128 characters. How long would you like your password to be?");
   var passwordLengthInt = parseInt(passwordLength);
 
+  if ((passwordLength === "") || (passwordLength < 8) || (passwordLength > 128) || (isNaN(passwordLengthInt) === true)){
+    passwordLengthInput();
+  }
+
+  // passwordLengthInput();
+
+  function passwordLengthInput()
+  {
+   // inform user password must be 8 char or more, prompt for number
+  var passwordLength = prompt(userName + " your password can be between 8 and 128 characters. How long would you like your password to be?");
+  var passwordLengthInt = parseInt(passwordLength);
+    
 // if statements warning user about incorrect input
       if (passwordLength === "")
     {
       alert("Please enter something, like a number");
+      passwordLength =0;
       passwordLengthInput();
     }
     if(passwordLength < 8)
     {
       alert("Your password must be at least 8 characters long");
+      passwordLength =0;
       passwordLengthInput();
     }
     if(passwordLength > 128)
     {
       alert("Your password must be at most 128 characters long");
+      passwordLength =0;
       passwordLengthInput();
     }
     if (isNaN(passwordLengthInt) === true)
     {
       alert("Please choose a number");
+      passwordLength =0;
       passwordLengthInput();
     }
-
   }
-  
-    
  
      // ask user if want to use numbers and concat into mysteryMeat
      var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
@@ -121,8 +131,6 @@ console.log(mysteryMeat);
   }
   
   
-
-
 
 
 
