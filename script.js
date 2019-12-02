@@ -14,35 +14,39 @@ function generatePassword()
   // Welcome user and ask for name
   alert("Hi there! Let's make a nifty and secure password for you");
   var userName = prompt("To get started, what is your name?");
-  // inform user password must be 8 char or more, prompt for number
+  passwordLengthInput();
+
+  function passwordLengthInput()
+  {
+    // inform user password must be 8 char or more, prompt for number
   var passwordLength = prompt(userName + " your password can be between 8 and 128 characters. How long would you like your password to be?");
   var passwordLengthInt = parseInt(passwordLength);
 
-
-    if( (passwordLength === "") || (passwordLength < 8) || (passwordLength > 128) || (isNaN(passwordLengthInt) === true) )
-    {
+// if statements warning user about incorrect input
       if (passwordLength === "")
     {
       alert("Please enter something, like a number");
-      var passwordLength = prompt(userName + " How long would you like your password to be?");
+      passwordLengthInput();
     }
-    else if(passwordLengthInt < 8)
+    if(passwordLength < 8)
     {
-      alert("Your password must be at least 8 characters long")
-      var passwordLength = prompt(userName + " How long would you like your password to be?");
+      alert("Your password must be at least 8 characters long");
+      passwordLengthInput();
     }
-    else if(passwordLengthInt > 128)
+    if(passwordLength > 128)
     {
-      alert("Your password must be at most 128 characters long")
-      var passwordLength = prompt(userName + " How long would you like your password to be?");
+      alert("Your password must be at most 128 characters long");
+      passwordLengthInput();
     }
-    else if (isNaN(passwordLengthInt) === true)
+    if (isNaN(passwordLengthInt) === true)
     {
-      alert("Please choose a number")
-      var passwordLength = prompt(userName + " How long would you like your password to be?");
+      alert("Please choose a number");
+      passwordLengthInput();
     }
-    else{}
-    }
+
+  }
+  
+    
  
      // ask user if want to use numbers and concat into mysteryMeat
      var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
@@ -102,14 +106,14 @@ console.log(mysteryMeat);
   //    return mysteryMeat;
 
   //  randomize mysteryMeat
-  mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
-  console.log(mysteryMeat);
+  // mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
+  // console.log(mysteryMeat);
   // select length of password to return
 
   for (var i = 0; i < passwordLength; i++)
   {
     console.log(mysteryMeat[i]);
-    mysteryMeatFinal.push(mysteryMeat[i]);
+    mysteryMeatFinal.push(mysteryMeat[Math.floor(Math.random()* mysteryMeat.length)]);
     
   }
   return mysteryMeatFinal.join("");
