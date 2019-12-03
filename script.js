@@ -8,6 +8,8 @@ var upperCharPas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 var mysteryMeat = [];
 // array of randomized characters consisting of only length of password
 var mysteryMeatFinal = [];
+""
+var passwordText = "";
 
 function generatePassword()
 {
@@ -142,27 +144,25 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
-  copyBtn.removeAttribute("disabled");
-  copyBtn.focus();
+  // copyBtn.removeAttribute("disabled");
+  // copyBtn.focus();
 }
 // copy to clipboard function
-function copyToClipboard(password) {
+function copyToClipboard() {
   // BONUS 
-  /* Get the text field */
-  var copyText = document.getElementById(password);
 
   /* Select the text field */
-  copyText.select();
+  passwordText.select();
 
   /* Copy the text inside the text field */
   document.execCommand("copy");
 
   /* Alert the copied text */
-  alert("Copied the password: " + copyText.value);
+  alert("Copied the password: " + passwordText.value);
 
 }
 
