@@ -9,10 +9,13 @@ var mysteryMeat = [];
 // array of randomized characters consisting of only length of password
 var mysteryMeatFinal = [];
 ""
-var passwordText = "";
+var passwordText = document.querySelector("#password");
 
 function generatePassword()
 {
+  // function to erase prev password & revert to original place holder text
+  // clearContents();
+  
   // Welcome user and ask for name
   alert("Hi there! Let's make a nifty and secure password for you");
   var userName = prompt("To get started, what is your name?");
@@ -106,7 +109,7 @@ function generatePassword()
 // uses flat method to seperate arrays into one big sole array
   mysteryMeat = mysteryMeat.flat(1);
   console.log(mysteryMeat);
-
+  mysteryMeatFinal = []
   // select length of password to return
   for (var i = 0; i < passwordLength; i++)
   {
@@ -117,16 +120,20 @@ function generatePassword()
   return mysteryMeatFinal.join("");
   }
 // end of generatePassword function
+//------------------------------------------------------------------------------------;
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var placeholderEL = document.querySelector("::placeholder");
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  passwordText = document.querySelector("#password");
+  password = generatePassword();
+  // passwordText = document.querySelector("#password");
   passwordText.value = password;
+  // function to erase prev password & revert to original place holder text
+
 }
+
 // copy to clipboard function
 function copyToClipboard() {
   // BONUS 
@@ -144,3 +151,4 @@ function copyToClipboard() {
 generateBtn.addEventListener("click", writePassword);
 
 // BONUS EVENT LISTENER
+

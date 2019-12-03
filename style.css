@@ -1,5 +1,5 @@
 body{
-    background-color: bisque;
+    background-color: rgb(221, 197, 166);
 }
 
 header{
@@ -20,4 +20,6 @@ h2{
 }
 textarea{
     width: 25rem;
+    height: 5rem;
+    text-align: center;
 }
