@@ -149,10 +149,21 @@ function writePassword() {
   copyBtn.removeAttribute("disabled");
   copyBtn.focus();
 }
-
+// copy to clipboard function
 function copyToClipboard(password) {
   // BONUS 
-  
+  /* Get the text field */
+  var copyText = document.getElementById(password);
+
+  /* Select the text field */
+  copyText.select();
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+  alert("Copied the password: " + copyText.value);
+
 }
 
 // Add event listener to generate button
