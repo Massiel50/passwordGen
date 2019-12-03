@@ -5,29 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>Password Generator</h1>
-      </header>
-      <div class="card">
-        <div class="card-header">
-          <h2>Generate a Password</h2>
-        </div>
-        <div class="card-body">
-          <textarea
-            readonly
-            id="password"
-            placeholder="Your Secure Password"
-            aria-label="Generated Password"
-          ></textarea>
-        </div>
-        <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-        </div>
+      <!-- row for header -->
+      <div class="row">
+          <header>
+              <h1>Password Generator</h1>
+            </header>
       </div>
+      <!-- row for rest of password generator -->
+      <div class="row">
+        <div class="col">
+            <div class="card text-white bg-info mb-3" style="max-width: 30rem;">
+                <div class="card-header">
+                  <h2>Generate a Password</h2>
+                </div>
+                <div class="card-body">
+                  <div class="card-body">
+                      <textarea
+                        readonly
+                        id="password"
+                        placeholder="Your Secure Password"
+                        aria-label="Generated Password"
+                      ></textarea>
+                    </div>
+                    <!-- button row -->
+                   <div class="row">
+                    <!-- generate password button col -->
+                    <div class="col-sm-6">
+                    <div class="card-footer">
+                        <button id="generate" class="btn btn-secondary btn-lg">Generate Password</button>
+                        <!-- <button id="generate" class="btn">Generate Password</button> -->
+                      </div>
+                    </div>
+
+                    <!-- copy to clipboard button col -->
+                    <div class="col-sm-6">
+                        <div class="card-footer">
+                            <button onclick="copyToClipboard()" class="btn btn-secondary btn-lg">Copy To Clipboard</button>
+                          </div>
+
+                    </div>
+                   </div>
+
+                   
+                </div>
+              </div>
+
+        </div>
+
+         
+
+      </div>
+      
     </div>
     <script src="script.js"></script>
   </body>

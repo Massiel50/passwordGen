@@ -118,8 +118,9 @@ console.log(mysteryMeat);
   //  randomize mysteryMeat
   // mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
   // console.log(mysteryMeat);
-  // select length of password to return
 
+
+  // select length of password to return
   for (var i = 0; i < passwordLength; i++)
   {
     console.log(mysteryMeat[i]);
@@ -145,12 +146,13 @@ function writePassword() {
 
   passwordText.value = password;
 
-  // copyBtn.removeAttribute("disabled");
-  // copyBtn.focus();
+  copyBtn.removeAttribute("disabled");
+  copyBtn.focus();
 }
 
 function copyToClipboard(password) {
   // BONUS 
+  
 }
 
 // Add event listener to generate button
