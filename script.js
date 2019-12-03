@@ -25,8 +25,6 @@ function generatePassword()
     passwordLengthInput();
   }
 
-  // passwordLengthInput();
-
   function passwordLengthInput()
   {
    // inform user password must be 8 char or more, prompt for number
@@ -59,8 +57,7 @@ function generatePassword()
       passwordLengthInput();
     }
   }
- 
-     // ask user if want to use numbers and concat into mysteryMeat
+     // ask user if want to use numbers and push into mysteryMeat
      var wantNum = confirm("Would " + userName + " like to use numbers in the password?");
      if(wantNum == true)
      {
@@ -70,8 +67,7 @@ function generatePassword()
      else{
      alert("Ok " + userName + ", no numbers");
      }
-  
-   // ask user if want to use special characters and concat into mysteryMeat
+   // ask user if want to use special characters and push into mysteryMeat
      var wantSpecChar = confirm("Would " + userName + " like to use special characters in the password?");
      if(wantSpecChar == true)
      {
@@ -81,7 +77,7 @@ function generatePassword()
      else{
    alert("Ok " + userName + ", no special characters")
      }
-   // ask user if want to use lower case letters and concat into mysteryMeat
+   // ask user if want to use lower case letters and push into mysteryMeat
      var wantLowCase = confirm("Would " + userName + " like to use lower case characters in the password?");
      if(wantLowCase == true)
      {
@@ -91,7 +87,7 @@ function generatePassword()
      else{
      alert("Ok " + userName + ", no lower case characters")
      }
-   // ask user if want to use upper case letters and concat into mysteryMeat
+   // ask user if want to use upper case letters and push into mysteryMeat
      var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?");
      if(wantUpCase == true)
     {
@@ -108,19 +104,8 @@ function generatePassword()
    }
    
 // uses flat method to seperate arrays into one big sole array
-mysteryMeat = mysteryMeat.flat(1);
-console.log(mysteryMeat);
-
-   // randomly select index's in mysteryMeat array for password
-  //  mysteryMeat[Math.floor(Math.random() * mysteryMeat.length)];
-  //  console.log(mysteryMeat);
-  //  alert("Your password is " + mysteryMeat);
-  //    return mysteryMeat;
-
-  //  randomize mysteryMeat
-  // mysteryMeat.sort(function(a, b){return 0.5 - Math.random() });
-  // console.log(mysteryMeat);
-
+  mysteryMeat = mysteryMeat.flat(1);
+  console.log(mysteryMeat);
 
   // select length of password to return
   for (var i = 0; i < passwordLength; i++)
@@ -130,42 +115,31 @@ console.log(mysteryMeat);
     
   }
   return mysteryMeatFinal.join("");
-
   }
-  
-  
-
-
+// end of generatePassword function
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   passwordText = document.querySelector("#password");
-
   passwordText.value = password;
-
-  // copyBtn.removeAttribute("disabled");
-  // copyBtn.focus();
 }
 // copy to clipboard function
 function copyToClipboard() {
   // BONUS 
 
-  /* Select the text field */
+  // Select the text field 
   passwordText.select();
 
-  /* Copy the text inside the text field */
+  // Copy the text inside the text field 
   document.execCommand("copy");
 
-  /* Alert the copied text */
+  // Alert the copied text 
   alert("Copied the password: " + passwordText.value);
-
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
