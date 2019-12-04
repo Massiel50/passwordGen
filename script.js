@@ -8,14 +8,11 @@ var upperCharPas = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 var mysteryMeat = [];
 // array of randomized characters consisting of only length of password
 var mysteryMeatFinal = [];
-""
+
 var passwordText = document.querySelector("#password");
 
 function generatePassword()
-{
-  // function to erase prev password & revert to original place holder text
-  // clearContents();
-  
+{ 
   // Welcome user and ask for name
   alert("Hi there! Let's make a nifty and secure password for you");
   var userName = prompt("To get started, what is your name?");
@@ -34,7 +31,7 @@ function generatePassword()
   var passwordLength = prompt(userName + " your password can be between 8 and 128 characters. How long would you like your password to be?");
   var passwordLengthInt = parseInt(passwordLength);
     
-// if statements warning user about incorrect input
+  // if statements warning user about incorrect input
       if (passwordLength === "")
     {
       alert("Please enter something, like a number");
@@ -88,17 +85,17 @@ function generatePassword()
        alert("Ok " + userName + ", we'll add lower case characters");
      }
      else{
-     alert("Ok " + userName + ", no lower case characters")
+     alert("Ok " + userName + ", no lower case characters");
      }
    // ask user if want to use upper case letters and push into mysteryMeat
      var wantUpCase = confirm("Would " + userName + " like to use upper case characters in the password?");
      if(wantUpCase == true)
     {
      mysteryMeat.push(upperCharPas);
-     alert("Ok " + userName + ", we'll add upper case characters")
+     alert("Ok " + userName + ", we'll add upper case characters");
     }
    else{
-     alert("Ok " + userName + ", no upper case characters")
+     alert("Ok " + userName + ", no upper case characters");
    }
  
   //  checks to see what arrays have been added
@@ -109,7 +106,7 @@ function generatePassword()
 // uses flat method to seperate arrays into one big sole array
   mysteryMeat = mysteryMeat.flat(1);
   console.log(mysteryMeat);
-  mysteryMeatFinal = []
+  mysteryMeatFinal = [];
   // select length of password to return
   for (var i = 0; i < passwordLength; i++)
   {
@@ -124,14 +121,10 @@ function generatePassword()
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var placeholderEL = document.querySelector("::placeholder");
 // Write password to the #password input
 function writePassword() {
   password = generatePassword();
-  // passwordText = document.querySelector("#password");
   passwordText.value = password;
-  // function to erase prev password & revert to original place holder text
-
 }
 
 // copy to clipboard function

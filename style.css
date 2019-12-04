@@ -1,25 +1,32 @@
 body{
-    background-color: rgb(221, 197, 166);
+    background-image: url("https://cdn1.vectorstock.com/i/1000x1000/68/95/dark-blue-glowing-circuit-board-tech-background-vector-19816895.jpg");
 }
-
 header{
     margin: auto 0;
     height: 100px;
 }
 h1{
-    margin-left: 600px;
+    margin-left: 570px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: mintcream;
 }
 h2{
     margin-left: 70px;
 }
 .card{
-    margin-left: 550px;
+    margin-left: 500px;
+    margin-top: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: larger;
+}
+.card-footer{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 textarea{
     width: 25rem;
     height: 5rem;
     text-align: center;
+}
+#password{
+    padding-top: 10px;
 }
